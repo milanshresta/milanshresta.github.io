@@ -10,11 +10,38 @@
 </head>
 
 <body>
-    <h1>Hi, My name is Milan Shrestha.</h1>
+    <!--Preloader-->
+    <div class="spinner-wrapper">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+          </div>
+    </div>
+      
+    <div class="main">
+        <!--Header Section-->
+        <div class="header"></div>
+    </div>
 
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    <script>
+        $(document).ready(function() {
+        //Preloader
+        preloaderFadeOutTime = 500;
+        function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        preloader.fadeOut(preloaderFadeOutTime);
+        }
+        hidePreloader();
+        });
+        </script>
+
+    <!--script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
         data-id="milanshrestha" data-description="Support me on Buy me a coffee!" data-message="Hey 👋 There! "
-        data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+        data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script-->
 </body>
 
 </html>
