@@ -1,44 +1,41 @@
-:root {
+/**
+ *Light Theme
+ */
 
-  /**
-   * colors
-   */
+:root {
 
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(to bottom right,
-      hsl(240, 1%, 25%) 3%,
-      hsl(0, 0%, 19%) 97%);
+      rgb(255, 255, 255) 3%,
+      rgb(245, 245, 245) 97%);
   --bg-gradient-jet: linear-gradient(to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+      hsl(0deg 0% 100%) 3%,
+      hsl(0deg 0% 78%) 97%);
   --bg-gradient-yellow-1: linear-gradient(to bottom right,
       hsl(45, 100%, 71%) 0%,
       hsla(36, 100%, 69%, 0) 50%);
   --bg-gradient-yellow-2: linear-gradient(135deg,
       hsla(45, 100%, 71%, 0.251) 0%,
       hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(to bottom right,
-      hsl(0, 0%, 25%) 0%,
-      hsla(0, 0%, 25%, 0) 50%);
   --text-gradient-yellow: linear-gradient(to right,
-      hsl(45, 100%, 72%),
-      hsl(35, 100%, 68%));
+      hsl(0, 0%, 34%),
+      hsl(0, 0%, 10%));
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
+  --jet: 1px solid #F1F3F4;
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
+  --eerie-black-2: rgb(255, 255, 255);
+  --background-bg: #F9F9FB;
   --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
+  --white-2: hsl(0deg 0% 17%);
+  --orange-yellow-crayola: hsl(0, 0%, 100%);
+  --vegas-gold: hsl(0, 0%, 45%);
+  --light-gray: hsl(0deg 0% 17%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --bittersweet-shimmer: hsl(0, 0%, 45%);
 
   /**
    * typography
@@ -64,26 +61,20 @@
   --fw-600: 600;
 
   /**
-   * shadow
-   */
-
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /**
    * transition
    */
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
+  /* Light mode and Dark mode */
+  --color-bg: #458;
+  --color-switch-thumb: #ccc;
+  --color-switch-bg: #777;
+  --color-switch-bg-active: #245;
+  --switch-size: 3rem;
+
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -133,7 +124,7 @@ textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: var(--background-bg);
 }
 
 :focus {
@@ -145,7 +136,7 @@ html {
 }
 
 body {
-  background: var(--smoky-black);
+  background: var(--background-bg);
 }
 
 
@@ -159,7 +150,7 @@ body {
 .sidebar,
 article {
   background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  border: 1px solid #F1F3F4;
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
@@ -184,7 +175,6 @@ article {
   align-items: center;
   font-size: 16px;
   color: var(--orange-yellow-crayola);
-  box-shadow: var(--shadow-1);
   z-index: 1;
 }
 
@@ -192,7 +182,7 @@ article {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--eerie-black-1);
+  background: rgba(133, 132, 132, 1);
   border-radius: inherit;
   z-index: -1;
 }
@@ -269,12 +259,12 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx);
+  background: #F1F3F4;
   border-radius: 5px;
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
+  background: #b5b5b5;
   border-radius: 5px;
 }
 
@@ -284,11 +274,9 @@ article.active {
 
 .content-card {
   position: relative;
-  background: var(--border-gradient-onyx);
   padding: 15px;
   padding-top: 45px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
   cursor: pointer;
   z-index: 1;
 }
@@ -297,7 +285,8 @@ article.active {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: var(--bg-gradient-onyx);
+  border: 1px solid #F1F3F4;
   border-radius: inherit;
   z-index: -1;
 }
@@ -346,6 +335,7 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  border: 1px solid #F1F3F4;
 }
 
 .info-content .name {
@@ -357,10 +347,10 @@ main {
 }
 
 .info-content .title {
-  color: var(--white-1);
-  background: var(--onyx);
+  color: #ffffff;
+  background: rgba(133, 132, 132, 1);
   font-size: var(--fs-8);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-500);
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
@@ -372,10 +362,9 @@ main {
   right: -15px;
   border-radius: 0 15px;
   font-size: 13px;
-  color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
+  border: 1px solid #F1F3F4;
   padding: 10px;
-  box-shadow: var(--shadow-2);
   transition: var(--transition-1);
   z-index: 1;
 }
@@ -385,19 +374,19 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--bg-gradient-jet);
+  background: var(--bg-gradient-onyx);
   transition: var(--transition-1);
   z-index: -1;
 }
 
 .info_more-btn:hover,
 .info_more-btn:focus {
-  background: var(--bg-gradient-yellow-1);
+  background: #e3e3e3;
 }
 
 .info_more-btn:hover::before,
 .info_more-btn:focus::before {
-  background: var(--bg-gradient-yellow-2);
+  background: #e3e3e3;
 }
 
 .info_more-btn span {
@@ -434,7 +423,7 @@ main {
 }
 
 .contact-title {
-  color: var(--light-gray-70);
+  color: var(--white-2);
   font-size: var(--fs-8);
   text-transform: uppercase;
   margin-bottom: 2px;
@@ -459,7 +448,7 @@ main {
 }
 
 .social-item .social-link {
-  color: var(--light-gray-70);
+  color: rgba(133, 132, 132, 1);
   font-size: 18px;
 }
 
@@ -468,8 +457,15 @@ main {
   color: var(--light-gray);
 }
 
-
-
+#button {
+  border: 1px solid #245;
+  font-size: 12px;
+  border-radius: 50px;
+  width: 3rem;
+  text-align: center;
+  background-color: rgb(40, 40, 40);
+  color: #e3e3e3;
+}
 
 
 /*-----------------------------------*\
@@ -481,7 +477,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: rgba(133, 132, 132, 1);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -558,10 +554,8 @@ main {
 
 .service-item {
   position: relative;
-  background: var(--border-gradient-onyx);
   padding: 20px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
   z-index: 1;
 }
 
@@ -569,7 +563,8 @@ main {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: var(--bg-gradient-onyx);
+  border: 1px solid #F1F3F4;
   border-radius: inherit;
   z-index: -1;
 }
@@ -728,14 +723,14 @@ main {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--onyx);
+  background: hsl(0, 0%, 43.5%);
   border-radius: 8px;
   width: 32px;
   height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white-2);
+  color: hsl(0, 0%, 100%);
   font-size: 18px;
   opacity: 0.7;
 }
@@ -817,9 +812,6 @@ main {
 .clients-item img:hover {
   filter: grayscale(0);
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -1120,7 +1112,7 @@ main {
 }
 
 .project-category {
-  color: var(--light-gray-70);
+  color: #737373;
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
@@ -1157,7 +1149,8 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--eerie-black-1);
+  background: var(--bg-gradient-onyx);
+  border: 1px solid #F1F3F4;
   z-index: -1;
 }
 
@@ -1192,7 +1185,7 @@ main {
 }
 
 .blog-meta :is(.blog-category, time) {
-  color: var(--light-gray-70);
+  color: var(--vegas-gold);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
@@ -1211,7 +1204,7 @@ main {
 }
 
 .blog-post-item>a:hover .blog-item-title {
-  color: var(--orange-yellow-crayola);
+  color: #737373;
 }
 
 .blog-text {
@@ -1247,7 +1240,6 @@ main {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(1) invert(1);
 }
 
 .contact-form {
@@ -1270,7 +1262,7 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
-  border: 1px solid var(--jet);
+  border: 1px solid #F1F3F4;
   border-radius: 14px;
   outline: none;
 }
@@ -1303,7 +1295,6 @@ textarea.form-input::-webkit-resizer {
   position: relative;
   width: 100%;
   background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1312,7 +1303,6 @@ textarea.form-input::-webkit-resizer {
   border-radius: 14px;
   font-size: var(--fs-6);
   text-transform: capitalize;
-  box-shadow: var(--shadow-3);
   z-index: 1;
   transition: var(--transition-1);
 }
@@ -1321,10 +1311,11 @@ textarea.form-input::-webkit-resizer {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
   transition: var(--transition-1);
+  background: var(--bg-gradient-onyx);
+  border: 1px solid #F1F3F4;
 }
 
 .form-btn ion-icon {
@@ -1332,11 +1323,11 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-btn:hover {
-  background: var(--bg-gradient-yellow-1);
+  background: #e3e3e3;
 }
 
 .form-btn:hover::before {
-  background: var(--bg-gradient-yellow-2);
+  background: #e3e3e3;
 }
 
 .form-btn:disabled {
@@ -1690,7 +1681,7 @@ textarea.form-input::-webkit-resizer {
 
   .project-img,
   .blog-banner-box {
-    border-radius: 16px;
+    border-radius: 16px 16px 0px 0px;
   }
 
   .blog-posts-list {
@@ -1827,11 +1818,12 @@ textarea.form-input::-webkit-resizer {
   }
 
   .filter-item button:hover {
-    color: var(--light-gray-70);
+    color: rgb(99, 99, 99);
   }
 
   .filter-item button.active {
-    color: var(--orange-yellow-crayola);
+    color: rgb(99, 99, 99);
+    font-weight: var(--fw-600);
   }
 
   /* portfolio and blog grid */
@@ -2005,11 +1997,11 @@ textarea.form-input::-webkit-resizer {
   }
 
   body::-webkit-scrollbar-track {
-    background: var(--smoky-black);
+    background: var(--background-bg);
   }
 
   body::-webkit-scrollbar-thumb {
-    border: 5px solid var(--smoky-black);
+    border: 5px solid var(--background-bg);
     background: hsla(0, 0%, 100%, 0.1);
     border-radius: 20px;
     box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),

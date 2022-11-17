@@ -15,7 +15,21 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css" id="lighttheme">
+  <!--link rel="stylesheet" href="./assets/css/darktheme.css" id="darktheme"-->
+
+  <script>
+    function toggleTheme() {
+
+      let theme = document.getElementsByTagName('link')[1];
+
+      if (theme.getAttribute('href') == './assets/css/style.css') {
+        theme.setAttribute('href', './assets/css/darktheme.css');
+      } else {
+        theme.setAttribute('href', './assets/css/style.css');
+      }
+    }
+  </script>
 
   <!--
     - google font link
@@ -23,6 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -128,14 +143,8 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link" target="_blank">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="#" class="social-link" target="_blank">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a href="https://github.com/milanshresta" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
@@ -145,8 +154,17 @@
             </a>
           </li>
 
-        </ul>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/milan-shrestha-48a3a2183/" class="social-link" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
 
+          <li class="button-li">
+            <button type="button" id="button" onclick="toggleTheme()">Dark</button>
+          </li>
+
+        </ul>
       </div>
 
     </aside>
@@ -236,8 +254,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-design-black.svg" alt="Web design icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -253,7 +270,7 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-dev-black.svg" alt="Web development icon" width="40">
               </div>
 
               <div class="service-content-box">
@@ -393,7 +410,7 @@
                 <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
               </figure>
 
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+              <img src="./assets/images/icon-quote-black.svg" alt="quote icon">
             </div>
 
             <div class="modal-content">
@@ -433,42 +450,42 @@
               <!--a href="#">
                 <img src="./assets/images/logo-1-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Coming Soon</p>
             </li>
 
             <li class="clients-item">
               <!--a href="#">
                 <img src="./assets/images/logo-2-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Coming Soon</p>
             </li>
 
             <li class="clients-item">
               <!--a href="#">
                 <img src="./assets/images/logo-3-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Coming Soon</p>
             </li>
 
             <li class="clients-item">
               <!--a href="#">
                 <img src="./assets/images/logo-4-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Coming Soon</p>
             </li>
 
             <li class="clients-item">
               <!--a href="#">
                 <img src="./assets/images/logo-5-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Coming Soon</p>
             </li>
 
             <li class="clients-item">
               <!--a href="#">
                 <img src="./assets/images/logo-6-color.png" alt="client logo">
               </a-->
-              <p style="color:#fff">Coming Soon</p>
+              <p class="clients-coming">Let's me assist you :)</p>
             </li>
 
           </ul>
@@ -679,6 +696,19 @@
 
             </li>
 
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">React</h5>
+                <data value="20">10%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 10%;"></div>
+              </div>
+
+            </li>
+
           </ul>
 
         </section>
@@ -776,7 +806,8 @@
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/milanshresta/react-static-product-page/tree/main/product-page" target="_blank">
+              <a href="https://github.com/milanshresta/react-static-product-page/tree/main/product-page"
+                target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -817,7 +848,8 @@
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
-              <a href="https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack" target="_blank">
+              <a href="https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack"
+                target="_blank">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
@@ -915,6 +947,10 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+
+  </script>
 
 </body>
 
