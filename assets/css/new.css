@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+}
+
+.h1 {
+    font-size: 15rem;
+    line-height: 80%;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -1rem;
+}
+
+.name {
+    text-align: center;
+}
